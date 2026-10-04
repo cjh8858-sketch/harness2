@@ -31,6 +31,7 @@
 - [`cardnews_template.md`](../template/cardnews_template.md) — 세로형 카드뉴스 표지 관찰, 6장 콘텐츠 흐름, 문구 블록과 게시 전 체크리스트.
 - [`thumbnail_template.md`](../template/thumbnail_template.md) — 16:9 YouTube 썸네일 레이아웃, 문구 가이드와 축소 검수 항목.
 - [`team-agent-plan.md`](./team-agent-plan.md) — Claude Code 공식 가이드를 반영한 총괄·리서치·콘텐츠·디자인·검수 업무 흐름 및 에이전트 운용 제안.
+- [`index.html`](./index.html) — GitHub Pages로 배포하는 반응형 프로젝트 라이브러리 웹페이지.
 
 #### 카드뉴스 레퍼런스
 

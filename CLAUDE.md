@@ -15,6 +15,7 @@ Before doing any work in this project:
 
 - Save all user-requested deliverables and generated project documents under `output/`.
 - Project-local Claude Code configuration under `.claude/` is an operational exception required to install and maintain hooks.
+- The root `index.html` is reserved for the GitHub Pages entrypoint that forwards visitors to `output/`; keep the actual site page and deliverable content in `output/`.
 - Keep this `CLAUDE.md` at the project root so it can serve as the project startup instruction file.
 - Treat `context/` and `template/` as source/reference material. Do not overwrite, move, or rename source materials unless explicitly requested.
 - Use descriptive filenames and preserve the existing Korean language and Markdown style where appropriate.

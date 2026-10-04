@@ -39,7 +39,7 @@ if ($toolName -in @("Write", "Edit", "MultiEdit", "NotebookEdit")) {
     }
 
     if ($targetPaths.Count -eq 0) {
-        Deny-ToolCall "Project guard could not identify the target file. Write operations must target output/ or .claude/."
+        Deny-ToolCall "Project guard could not identify the target file. Write operations must target output/, .claude/, or the root GitHub Pages entrypoint."
     }
 
     foreach ($target in $targetPaths) {
@@ -60,9 +60,13 @@ if ($toolName -in @("Write", "Edit", "MultiEdit", "NotebookEdit")) {
             (Join-Path $projectRoot ".claude\"),
             [System.StringComparison]::OrdinalIgnoreCase
         )
+        $isPagesEntrypoint = $fullTarget.Equals(
+            (Join-Path $projectRoot "index.html"),
+            [System.StringComparison]::OrdinalIgnoreCase
+        )
 
-        if (-not ($inOutput -or $inClaudeConfig)) {
-            Deny-ToolCall "Project guard blocked a write outside output/ and .claude/. Source folders and project files are read-only."
+        if (-not ($inOutput -or $inClaudeConfig -or $isPagesEntrypoint)) {
+            Deny-ToolCall "Project guard blocked a write outside output/, .claude/, and the root GitHub Pages entrypoint. Source folders and project files are read-only."
         }
     }
 }
